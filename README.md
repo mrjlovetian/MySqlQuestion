@@ -28,5 +28,13 @@ CREATE TABLE <TABLE_NAME> (.......) CHARACTER SET <CODE>;
 alter table <tbname> convert to charset gbk或utf8;
 ```
 
-
+# 如何在MySQl数据库中给已有的数据表添加自增ID？
+1、给某一张表先增加一个字段,这里我们就以node_table这张表来举例，在数据库命令行输入下面指令 ：
+```
+alter table node_table add id int
+```
+2、更改id字段属性为自增属性，在数据库命令行输入下面指令 ：
+```
+alter table node_table change id id int not null auto_increment primary key; 
+```
 
